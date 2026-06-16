@@ -1,8 +1,71 @@
 backend:
-name: git-gateway
-branch: main
+  name: git-gateway
+  branch: main
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
-collections: []
+collections:
+  - name: "quiz"
+    label: "Тесты"
+    files:
+      - file: "data/quiz.json"
+        label: "Вопросы тестов"
+        name: "quiz"
+        fields:
+          - label: "Вопросы"
+            name: "questions"
+            widget: "list"
+            fields:
+              - {label: "Вопрос", name: "question", widget: "string"}
+              - {label: "Ответы", name: "options", widget: "list"}
+              - {label: "Правильный ответ", name: "correct", widget: "number"}
+
+  - name: "social"
+    label: "Социальные сети"
+    files:
+      - file: "data/telegram.json"
+        label: "Telegram"
+        name: "telegram"
+        fields:
+          - {label: "Описание", name: "description", widget: "text"}
+          - {label: "Угрозы", name: "threats", widget: "list"}
+
+      - file: "data/whatsapp.json"
+        label: "WhatsApp"
+        name: "whatsapp"
+        fields:
+          - {label: "Описание", name: "description", widget: "text"}
+          - {label: "Угрозы", name: "threats", widget: "list"}
+
+      - file: "data/vk.json"
+        label: "ВКонтакте"
+        name: "vk"
+        fields:
+          - {label: "Описание", name: "description", widget: "text"}
+          - {label: "Угрозы", name: "threats", widget: "list"}
+
+  - name: "checklist"
+    label: "Чек-лист"
+    files:
+      - file: "data/checklist.json"
+        label: "Пункты чек-листа"
+        name: "checklist"
+        fields:
+          - label: "Пункты"
+            name: "items"
+            widget: "list"
+
+  - name: "news"
+    label: "Новости"
+    files:
+      - file: "data/news.json"
+        label: "Новости"
+        name: "news"
+        fields:
+          - label: "Новости"
+            name: "posts"
+            widget: "list"
+            fields:
+              - {label: "Заголовок", name: "title", widget: "string"}
+              - {label: "Текст", name: "body", widget: "text"}
