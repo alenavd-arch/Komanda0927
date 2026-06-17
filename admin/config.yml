@@ -5,5 +5,134 @@ backend:
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
-collections: []
-  
+collections:
+  - name: "news"
+    label: "Новости"
+    files:
+      - file: "data/news.json"
+        label: "Новости"
+        name: "news"
+        fields:
+          - label: "Новости"
+            name: "posts"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - label: "Заголовок"
+                name: "title"
+                widget: "string"
+              - label: "Текст"
+                name: "body"
+                widget: "text"
+
+  - name: "quiz"
+    label: "Тест"
+    files:
+      - file: "data/quiz.json"
+        label: "Вопросы"
+        name: "quiz"
+        fields:
+          - label: "Вопросы"
+            name: "questions"
+            widget: "list"
+            summary: "{{fields.question}}"
+            fields:
+              - label: "Вопрос"
+                name: "question"
+                widget: "string"
+              - label: "Ответы"
+                name: "options"
+                widget: "list"
+                field:
+                  label: "Ответ"
+                  name: "option"
+                  widget: "string"
+              - label: "Правильный ответ"
+                name: "correct"
+                widget: "number"
+                value_type: "int"
+                min: 0
+
+  - name: "telegram"
+    label: "Telegram"
+    files:
+      - file: "data/telegram.json"
+        label: "Telegram"
+        name: "telegram"
+        fields:
+          - label: "Описание"
+            name: "description"
+            widget: "text"
+          - label: "Угрозы"
+            name: "threats"
+            widget: "list"
+            field:
+              label: "Угроза"
+              name: "threat"
+              widget: "string"
+
+  - name: "whatsapp"
+    label: "WhatsApp"
+    files:
+      - file: "data/whatsapp.json"
+        label: "WhatsApp"
+        name: "whatsapp"
+        fields:
+          - label: "Описание"
+            name: "description"
+            widget: "text"
+          - label: "Угрозы"
+            name: "threats"
+            widget: "list"
+            field:
+              label: "Угроза"
+              name: "threat"
+              widget: "string"
+
+  - name: "vk"
+    label: "ВКонтакте"
+    files:
+      - file: "data/vk.json"
+        label: "ВКонтакте"
+        name: "vk"
+        fields:
+          - label: "Описание"
+            name: "description"
+            widget: "text"
+          - label: "Угрозы"
+            name: "threats"
+            widget: "list"
+            field:
+              label: "Угроза"
+              name: "threat"
+              widget: "string"
+
+  - name: "threats"
+    label: "Теория угроз"
+    files:
+      - file: "data/threats.json"
+        label: "Угрозы"
+        name: "threats"
+        fields:
+          - label: "Угрозы"
+            name: "threats"
+            widget: "list"
+            field:
+              label: "Угроза"
+              name: "threat"
+              widget: "string"
+
+  - name: "checklist"
+    label: "Чек-лист"
+    files:
+      - file: "data/checklist.json"
+        label: "Чек-лист"
+        name: "checklist"
+        fields:
+          - label: "Пункты"
+            name: "items"
+            widget: "list"
+            field:
+              label: "Пункт"
+              name: "item"
+              widget: "string"
