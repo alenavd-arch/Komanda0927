@@ -1,6 +1,10 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: alenavd-arch/Komanda0927
   branch: master
+
+  base_url: https://gentle-grass-305e.vodovozovaalena06.workers.dev
+  auth_endpoint: auth
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
