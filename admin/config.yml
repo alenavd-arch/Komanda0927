@@ -2,7 +2,6 @@ backend:
   name: github
   repo: alenavd-arch/Komanda0927
   branch: master
-
   base_url: https://wispy-dawn-7383.vodovozovaalena06.workers.dev
   auth_endpoint: auth
 
